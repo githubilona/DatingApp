@@ -15,7 +15,7 @@ login(model: any){
       map((response: any) => {
         const user = response;
         if (user){
-          localStorage.setItems('token', user.token);
+          localStorage.setItem('token', user.token);
         }
       })
     );
