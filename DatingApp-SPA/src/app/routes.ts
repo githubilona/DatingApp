@@ -6,7 +6,7 @@ import { MemeberListComponent } from './memeber-list/memeber-list.component';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'memebers', component: MemeberListComponent },
+    { path: 'members', component: MemeberListComponent },
     { path: 'messages', component: MessagesComponent },
     { path: 'lists', component: ListsComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full' }
