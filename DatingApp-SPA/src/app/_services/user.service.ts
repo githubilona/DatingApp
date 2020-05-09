@@ -11,19 +11,22 @@ import { User } from '../_models/user';
 export class UserService {
   baseUrl = environment.apiUrl;
 
-constructor(private htttp: HttpClient) { }
+constructor(private http: HttpClient) { }
 
 getUsers(): Observable<User[]>{
-  return this.htttp.get<User[]>(this.baseUrl + 'users');
+  return this.http.get<User[]>(this.baseUrl + 'users');
 }
 getUser(id): Observable<User>{
-  return this.htttp.get<User>(this.baseUrl + 'users/' + id);
+  return this.http.get<User>(this.baseUrl + 'users/' + id);
 }
 updateUser(id: number, user: User){
-  return this.htttp.put(this.baseUrl + 'users/' + id, user);
+  return this.http.put(this.baseUrl + 'users/' + id, user);
 }
 setMainPhoto(userId: number, id: number){
-  return this.htttp.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {} );
+  return this.http.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {} );
+}
+deletePhoto(userId: number, id: number){
+  return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
 }
 
 }
