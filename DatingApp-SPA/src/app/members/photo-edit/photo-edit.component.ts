@@ -47,7 +47,6 @@ export class PhotoEditComponent implements OnInit {
         this.photos.push(photo);
       }
     };
-  
   }
 
 }
