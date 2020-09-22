@@ -30,6 +30,7 @@ getUsers(page?, itemsPerPage?): Observable<PaginatedResult<User[]>>{
         if (response.headers.get('Pagination') != null){
           paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
         }
+        // console.log('TESTT ' + paginatedResult.pagination.totalItems);
         return paginatedResult;
       })
     );
