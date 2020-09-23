@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { PaginatedResult } from '../_models/pagination';
 import { map } from 'rxjs/operators';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { Message } from '../_models/message';
+
 
 
 @Injectable({
@@ -68,9 +69,7 @@ sendLike(id: number, recipientId: number) {
   return this.http.post(this.baseUrl + 'users/' + id + '/like/' + recipientId, {});
 }
 getMessages(id: number, page?, itemsPerPage?, messageContainer?) {
-  const paginatedResult: PaginatedResult<Message[]> = new PaginatedResult<
-    Message[]
-  >();
+  const paginatedResult: PaginatedResult<Message[]> = new PaginatedResult<Message[]>();
 
   let params = new HttpParams();
 
