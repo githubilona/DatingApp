@@ -46,7 +46,7 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages" [ngStyle]="{display:'inline-block'}"></ngx-gallery>
           </tab>
           <tab heading="Messages">
-            <p>messages</p>
+            <app-member-messages [recipientId]="user.id"></app-member-messages>
           </tab>
         </tabset>
       </div>
